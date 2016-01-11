@@ -1,0 +1,388 @@
+@CHARSET "ISO-8859-1";
+
+.body_background
+{
+	background-color: #b2b2b2;
+	padding: 0px;
+    margin: 0px;
+    font-family: Candara;
+}
+    
+#header
+{
+	width:100%;
+	height:110px;
+            border-bottom: 1px solid #666666;
+}
+
+.logo {
+    float: left;
+    width: 300px;
+    margin: 30px;
+}
+.logo img
+{
+    width: 150px;height: 49px;
+}
+.rightPart {
+    width: auto;
+    float: right;
+}
+
+nav {
+    width: auto;
+    float: right;
+    margin: 20px 30px;
+}
+nav ul {
+    margin: 0px;
+    padding: 0px;
+    float: right;
+    
+}
+nav ul li {
+    margin: 0px;
+    padding: 0px 15px 0 15px;
+    display: inline;
+    background: url(../images/spacer.png) right no-repeat;
+}
+nav ul li a {
+   text-decoration: none;
+   color: #fff;
+    font-family: Candara;
+    font-size: 14px;
+}
+.header-part {
+    float: right;
+    clear: both;
+    margin: 0 0px;
+}
+.header-part .wlcome-user {
+    width: 220px;
+    line-height: 34px;
+    font-family: Candara;
+    color: #4d4d4f;
+    font-size: 18px;
+    float: left;
+}
+.header-part .wlcome-user .icon {
+    float: left;
+    background: rgb(209,209,209);
+    background: -moz-linear-gradient(top, rgba(209,209,209,1) 0%, rgba(147,147,147,1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(209,209,209,1)), color-stop(100%,rgba(147,147,147,1)));
+    background: -webkit-linear-gradient(top, rgba(209,209,209,1) 0%,rgba(147,147,147,1) 100%);
+    background: -o-linear-gradient(top, rgba(209,209,209,1) 0%,rgba(147,147,147,1) 100%);
+    background: -ms-linear-gradient(top, rgba(209,209,209,1) 0%,rgba(147,147,147,1) 100%);
+    background: linear-gradient(to bottom, rgba(209,209,209,1) 0%,rgba(147,147,147,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d1d1d1', endColorstr='#939393',GradientType=0 );
+    height: 35px;
+    width: 35px;
+    border-radius: 40px;
+    text-align: center;
+    width: 35px;
+    margin-right: 10px;
+}
+.header-part .wlcome-user .icon i.user {
+    background: url(../images/dasboard-icon.png) no-repeat -133px -11px;
+    width: 16px;
+    height: 16px;
+    float: left;
+    margin: 8px;
+}
+
+ul.nav-top {
+    float: left;
+    margin: 2px 20px 0 40px;
+    width: 230px;
+}
+ul.nav-top li {
+    float: left !important;
+    display: inline;
+    width: 22px !important;
+    height: 22px !important;
+    padding: 0;
+    margin: 0 0 0 10px;
+    cursor: pointer;
+}
+#menu ul li a i.viewpoint {
+    background: url(../images/nav-icon.png) no-repeat left -43px !important;
+}
+
+ul.nav-top li.search-icon {
+    background: url(../images/top-nav-icon.png) no-repeat -169px top;
+}
+ul.nav-top li.location {
+    width: 20px !important;
+    background: url(../images/top-nav-icon.png) no-repeat -255px top;
+}
+ul.nav-top li.calendar {
+    background: url(../images/top-nav-icon.png) no-repeat -96px top;
+}
+ul.nav-top li.map {
+    background: url(../images/top-nav-icon.png) no-repeat -121px top;
+}
+ul.nav-top li.bag {
+    background: url(../images/top-nav-icon.png) no-repeat -275px top;
+}
+ul.nav-top li.print {
+    background: url(../images/top-nav-icon.png) no-repeat -219px top;
+}
+ul.nav-top li.setting {
+    background: url(../images/top-nav-icon.png) no-repeat -195px top;
+}
+
+/* CSS for footer part*/
+
+footer
+{
+  z-index: 9999;
+    bottom: -1px;
+    clear: both;
+    position: fixed;
+    width: 100%;
+}
+footer p {
+    background-color: #5e5a5a;
+    text-align: center;
+    color: #c1bcbc;
+    font-size: 12px;
+    padding: 10px 0;
+    font-family: Candara;
+}
+.footeriframe
+{
+	 z-index: 9999;
+    bottom: -1px;
+    clear: both;
+    height: 33px;
+    width: 100%;
+}
+
+
+
+/* css for task bar*/
+.taskbar{font-size:18px; width: 12%; height: auto; }
+.taskbar-div{border-collapse:collapse; width: 100%;}
+.taskbar-cell{    border-bottom: 2px solid #7f7f7f;background-color: #B2B2B2;
+    text-align: left;padding-left:10px;
+    height: 82px;font-size:18px;
+    line-height: 82px;}
+    .taskbar-cell:HOVER{    border-bottom: 2px solid #7f7f7f;background-color: #B2B2B2;
+    text-align: left;padding-left:10px;
+    height: 82px;font-size:18px; background-color: #E3EDFD;font-family: calibri;
+    line-height: 82px;}
+    
+    .taskbar-celladd{    border-bottom: 2px solid #7f7f7f;background-color: #B2B2B2;
+    text-align: left;padding-left:10px;
+    height: 82px;font-size:18px; background-color: #E3EDFD;font-family: calibri;
+    line-height: 82px;}
+.anchor-cell{ text-decoration: none; color:#fff;}
+
+
+.menubar{font-size:18px; width: 100%; height: 80px; background-color: #e2e2e2;}
+.menubar-div{border-collapse:collapse; width:100%;}
+
+.menubar-cell{border-right:1px solid #7f7f7f;border-left:2px solid #7f7f7f;text-align:center;  height: 80px;font-family: calibri;}
+
+.menubar-celladd{border-right:1px solid #7f7f7f;border-left:2px solid #7f7f7f;text-align:center;font-size:18px;  height: 80px;background-color: #E3EDFD;font-family: calibri;}
+
+
+.menubar-cell:HOVER {border-right:1px solid #7f7f7f;border-left:2px solid #7f7f7f;text-align:center;font-size:18px;  height: 80px;background-color: #E3EDFD;font-family: calibri;}
+
+.anchorDiv{color:#000;
+}
+
+
+footer {
+    z-index: 9999;
+    bottom: -10px;
+    clear: both;
+    position: fixed;
+    width: 100%;
+}
+footer p {
+    background-color: #5e5a5a;
+    text-align: center;
+    color: #c1bcbc;
+    font-size: 12px;
+    padding: 10px 0;
+    font-family: Candara;
+}
+#header
+{  
+
+}
+/* #menu
+{
+  width: 12%;height: auto;
+  background-color: gray;
+      position: absolute;
+} */
+#menuleft
+{
+width: 88%;height:auto;float: right;
+}
+ #mainmenu
+{
+width: 100%;height:80px;
+}
+#maininner
+{
+width: 100%;height:500px;
+}
+.frame{width: 100%;height:600px;background-color: #b2b2b2;}
+
+/* scroling  strat*/
+
+#menu {
+border: none;
+ width: 12%;
+height:685px;
+overflow: overlay;
+ background-color: gray;
+  position: absolute;
+
+}
+
+/* Scrollbar styles */
+#menu::-webkit-scrollbar {
+width: 6px;
+height: 12px;
+}
+
+#menu::-webkit-scrollbar-track {
+
+border-radius: 10px;
+}
+
+#menu::-webkit-scrollbar-thumb {
+background: #5D5B5B;  
+border-radius: 10px;
+}
+
+#menu::-webkit-scrollbar-thumb:hover {
+background: #B2B2B2;  
+}
+
+
+/* scroling end*/
+
+/*---------Image Slider Widget css -------------------*/
+/*slider frame*/
+#sliderFrame 
+{
+    width:100%;
+    margin:0 auto; /*center-aligned*/
+
+    
+
+    height:300px;
+} 
+
+#slider, #slider div.sliderInner {
+    width:100%;height:100%;/* Must be the same size as the slider images */
+}
+
+#slider {
+	background:black url(loading.gif) no-repeat 50% 50%;
+	position:relative;
+	margin:0 auto; /*center-aligned*/
+    transform: translate3d(0,0,0);
+}
+
+/* the link style (if an image is wrapped in a link) */
+#slider a.imgLink, #slider .video {
+	z-index:2;
+	position:absolute;
+	top:0px;left:0px;border:0;padding:0;margin:0;
+	width:100%;height:100%;
+}
+#slider .video {
+	background:transparent url(video.png) no-repeat 50% 50%;
+}
+
+/* Caption styles */
+#slider div.mc-caption-bg, #slider div.mc-caption-bg2 {
+	position:absolute;
+	width:344px;
+	height:auto;
+	padding:10px 0;
+	left: 34px; /*if the caption needs to be aligned from right, specify by right instead of left. i.e. right:20px;*/
+	bottom: -30px;/*if the caption needs to be aligned from top, specify by top instead of bottom. i.e. top:150px;*/
+	z-index:3;
+	overflow:hidden;
+	font-size:0;
+}
+#slider div.mc-caption-bg {
+    /* NOTE: Its opacity, when background is not transparent, is to be set through the sliderOptions.captionOpacity setting in the js-image-slider.js file.*/
+	background:transparent;/* or any other colors such as White, or: background:none; */
+}
+#slider div.mc-caption-bg2 {
+    background:none;
+}
+#slider div.mc-caption {
+	font:bold 13px/16px calibri;
+	color:#403F3D;
+	z-index:4;
+	text-align:center;
+    background:none;
+}
+#slider div.mc-caption a { 
+	color:#66FFFF;
+}
+
+
+/* ------ built-in navigation bullets wrapper that is relative to the #slider ------*/
+#slider div.navBulletsWrapper  {
+	display:none;
+}
+
+/* --------- Others ------- */
+
+#slider div.loading 
+{
+    width:100%; height:100%;
+    background:transparent url(loading.gif) no-repeat 50% 50%;
+    filter: alpha(opacity=60);
+    opacity:0.6;
+    position:absolute;
+    left:0;
+    top:0; 
+    z-index:9;
+}
+
+#slider img, #slider>b, #slider a>b {
+	position:absolute; border:none; display:none;
+}
+
+#slider div.sliderInner {
+	overflow:hidden; 
+	-webkit-transform: rotate(0.000001deg);/* fixed the Chrome not crop border-radius bug*/
+	position:absolute; top:0; left:0;
+}
+
+#slider>a, #slider video, #slider audio {display:none;}
+
+
+/* -- thumbnails -- */
+#thumbs 
+{
+    margin-top:50px;
+    text-align:center;
+    font-size:0;
+}
+#thumbs .thumb 
+{
+    display:inline-block;
+    *display:inline;zoom:1;/*IE6, IE7 hack*/
+    margin:0 1px;/*this determins the distance between each thumbnail*/
+    border:1px solid #333;
+    padding:4px;
+    background:black;
+}
+
+#thumbs .thumb img{border:1px solid #555; cursor:pointer; width:70px; height:44px; opacity:0.5;filter:alpha(opacity=50);}
+#thumbs .thumb-on img{border:1px solid #999; opacity:1;filter:alpha(opacity=100);}
+#slider div {-webkit-transform: translate3d(0,0,0);transform: translate3d(0,0,0);}
+.frameHeader{color: #fff;margin-left: 34%;}    
+

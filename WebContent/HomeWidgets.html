@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+#topLeftWidget{width: 30%;height:570px;border: 1px solid #7f7f7f;border: 1px solid #666666;}
+ #topRightWidget{width: 36%;height:570px;background-color: #b2b2b2;    border: 1px solid #666666;} 
+ #bottomWidget{width: 30%;height: 570px;background-color: #b2b2b2;border: 1px solid #666666;   /*  border: rebeccapurple; */} 
+</style>
+
+<script>
+
+</script>
+</head>
+<body>
+<iframe id="topLeftWidget"></iframe>
+ <iframe id="topRightWidget"></iframe> 
+ <iframe id="bottomWidget"></iframe> 
+<script>
+document.getElementById('topLeftWidget').src = 'Widgets.html';
+document.getElementById('topRightWidget').src = 'EventsAndBlog.html';
+document.getElementById('bottomWidget').src = 'newsView';
+</script>
+</body>
+</html>

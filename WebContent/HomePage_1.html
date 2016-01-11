@@ -1,0 +1,158 @@
+
+<html>
+    <head>
+        <title>Home Page</title>
+        <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/homepage_1.css" rel="stylesheet" type="text/css"/>
+       <link rel="stylesheet" href="css/jquery.accordion.css" type="text/css">
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <div id="main">
+            <div id="header">
+                <div id="header_logo"> 
+                   <img src="images/hrlogo.png" alt="Logo" /> 
+                </div>
+                 <div id="header_profilename"> 
+                  Vikash Chauhan
+                </div>
+                <div id="header_profile"> 
+                   <img src="images/loginimage.png" alt="Logo" /> 
+                </div>
+                  
+               
+            </div>
+            <div id="menu">
+                <div class="menu_tab1 menu_tabColorodd">Project </div>
+                <div class="menu_tab1 menu_tabColoreven">Profile Details</div> 
+                 <div class="menu_tab1 menu_tabColorodd">Leave </div>
+                <div class="menu_tab1 menu_tabColoreven">Attendence</div> 
+                 <div class="menu_tab1 menu_tabColorodd">Employee Doc </div>
+                <div class="menu_tab1 menu_tabColoreven">Timesheet</div> 
+        
+            </div>
+            <div id="mid">
+                <div class="mid_left">
+                    <div class="mid_left_inner">Events & Blogs</div>
+                        <div class="mid_left_heading">Birthday Wishes</div>
+                        <div class="mid_left_innermenu">
+                            
+                            <div id="accordion1">
+                                <ul >
+         <li>
+            <h1>Vikash Chauhan</h1>
+              <div>
+               <span>Phasellus eget libero elit, a sodales felis. Morbi ligula tellus, posuere nec interdum ac,
+                blandit et ante. Morbi nibh orci, eleifend vitae venenatis non, molestie in magna.
+                Cras scelerisque risus eget odio interdum consequat.
+              </span>
+         </div>
+        </li>
+        <li>
+            <h1>Ankit Gupta</h1>
+            <div>
+                <span>Phasellus eget libero elit, a sodales felis. Morbi ligula tellus, posuere nec interdum ac,
+                    blandit et ante. Morbi nibh orci, eleifend vitae venenatis non, molestie in magna. 
+                    Cras scelerisque risus eget odio interdum consequat
+                 </span>
+            </div>
+        </li>
+        <li>
+            <h1>Rishabh Kumar</h1>
+            <div>
+                <span>
+                    Cras sollicitudin justo sit amet nibh vulputate laoreet. Etiam vitae ligula diam.
+                    Cras condimentum, nisl eu mollis convallis, purus risus pulvinar lectus, et commodo
+                    diam purus non purus.
+           </span></div>
+         </li>
+         <li>
+            <h1>Prem Choda</h1>
+            <div>
+                <span>
+                    Cras sollicitudin justo sit amet nibh vulputate laoreet. Etiam vitae ligula diam.
+                    Cras condimentum, nisl eu mollis convallis, purus risus pulvinar lectus, et commodo
+                    diam purus non purus.
+           </span></div>
+         </li>
+         <li>
+            <h1>Neha Rani</h1>
+            <div>
+                <span>
+                    Cras sollicitudin justo sit amet nibh vulputate laoreet. Etiam vitae ligula diam.
+                    Cras condimentum, nisl eu mollis convallis, purus risus pulvinar lectus, et commodo
+                    diam purus non purus.
+           </span></div>
+         </li>
+         <li>
+            <h1>Aniket Rajput</h1>
+            <div>
+                <span>
+                    Cras sollicitudin justo sit amet nibh vulputate laoreet. Etiam vitae ligula diam.
+                    Cras condimentum, nisl eu mollis convallis, purus risus pulvinar lectus, et commodo
+                    diam purus non purus.
+           </span></div>
+         </li>
+     </ul>
+    </div>
+                        </div>
+                    
+                </div>
+                <div class="mid_left">
+                        <div class="mid_left_inner">Knowledge Center</div>
+                        <div class="mid_left_knowledgecenter">
+                            <div class="mid_left_knowledgecenter_inner">Java Innovation:-</div>
+                            <div class="knowledgecenter_inner_text">
+                                Phasellus eget libero elit, a sodales felis. Morbi ligula tellus, posuere nec interdum ac,
+                    blandit et ante. Morbi nibh orci, eleifend vitae venenatis non, molestie in magna. 
+                    Cras scelerisque risus eget odio interdum consequat
+             
+                            </div>
+                        </div>
+                        <div class="mid_left_knowledgecenter">
+                            <div class="mid_left_knowledgecenter_inner">Java Innovation:-</div>
+                            <div class="knowledgecenter_inner_text">
+                                 Phasellus eget libero elit, a sodales felis. Morbi ligula tellus, posuere nec interdum ac,
+                    blandit et ante. Morbi nibh orci, eleifend vitae venenatis non, molestie in magna. 
+                    Cras scelerisque risus eget odio interdum consequat
+                            </div>
+                        </div>
+                </div>
+            
+            </div>
+            
+        </div>
+        <div class="footer">©2012 Agnitio Technologies Pvt. Ltd. All Rights Reserved</div> 
+        
+        
+        
+        
+        
+        
+        
+           <script src="css/jquery-1.8.2.min.js"></script>
+    <script src="css/jquery.accordion.js"></script>
+    <script>    
+    $("#accordion1").awsAccordion({
+    type:"vertical",
+    cssAttrsVer:{
+        ulWidth:800,
+        liHeight:50
+    },
+    startSlide:1,
+    openCloseHelper:{
+        openIcon:"ok-circle",
+        closeIcon:"ok-sign"
+    },
+    openOnebyOne:true,
+    classTab:"active",
+    slideOn:"click",
+    autoPlay:false,
+    autoPlaySpeed:2000
+})
+    </script>
+    </body>
+</html>

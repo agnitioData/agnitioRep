@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+<constant name="struts.devMode" value="false"></constant>
+ 
+<constant name="struts.convention.result.path" value="/"></constant>
+ 
+<package name="com.hrms.model" namespace="/" extends="struts-default">
+    
+    	<global-results>
+            <result name="error">/commonErrorPage.jsp</result>
+        </global-results>
+ 
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="error"/>
+            <exception-mapping exception="org.hibernate.exception.DataException" result="error"/>
+            <exception-mapping exception="java.sql.SQLException" result="error"/>
+        </global-exception-mappings>
+    
+    
+    
+    <!-- Employee login action -->
+     <action name="login" class="com.hrms.action.EmployeeLoginAction">
+    		 <!--<result name="success">welcome.jsp</result> -->
+    		<result name="employee">Home_Page.jsp</result>
+    		<result name="admin">admin_page.jsp</result>
+    		<result name="error">error.jsp</result>
+   	 </action> 
+   	 
+   	 <!-- Employee logout action -->
+   	 <action name="logout" class="com.hrms.action.EmployeeLoginAction" method="logout">  
+		<result name="success" >login.jsp</result>  
+	</action>
+	
+	<!-- Employee Leave submit Action-->
+   	 	<action name="leaveSubmit" class="com.hrms.action.EmpLeaveApplyAction" method="empLeaveApply">
+   	 		<result name="success">success.jsp</result>
+    		<result name="error">employeeLeaveApply.jsp</result>
+    	</action>
+    
+    <!--UserImage Upload action -->
+   	 	<!-- <action name="userImage" class="com.hrms.action.EventsUploadAction">  
+            <interceptor-ref name="fileUpload">  
+                <param name="maximumSize">2097152</param>  
+  				<param name="allowedTypes"> image/png,image/gif,image/jpeg,image/pjpeg </param>  
+            </interceptor-ref>  
+            <interceptor-ref name="defaultStack"></interceptor-ref>  
+            
+             <result name="success">/attendenceUploadSuccess.jsp</result>
+            <result name="error">/attendenceUploadError.jsp</result>
+        </action> -->
+    
+    <!-- Employee Attendence Excel file upload action -->
+    <action name="uploadAction" class="com.hrms.action.AttendenceUploadAction"> 
+ 
+            <interceptor-ref name="exception" />
+			<interceptor-ref name="alias" />
+			<interceptor-ref name="servletConfig" />
+			<interceptor-ref name="prepare" />
+			<interceptor-ref name="i18n" />
+			<interceptor-ref name="chain" />
+			<interceptor-ref name="debugging" />
+			<interceptor-ref name="profiling" />
+			<interceptor-ref name="scopedModelDriven" />
+			<interceptor-ref name="modelDriven" />
+			<interceptor-ref name="fileUpload">
+			<param name="maximumSize">52428800</param>
+			</interceptor-ref>
+			<interceptor-ref name="basicStack"/>
+			<interceptor-ref name="checkbox" />
+			<interceptor-ref name="staticParams" />
+			<interceptor-ref name="actionMappingParams" />
+			<interceptor-ref name="params">
+			<param name="excludeParams"> dojo\..*,^struts\..*</param>
+			</interceptor-ref>
+			<interceptor-ref name="conversionError" />
+			<interceptor-ref name="validation">
+			<param name="excludeMethods"> input,back,cancel,browse</param>
+			</interceptor-ref>
+			<interceptor-ref name="workflow">
+			<param name="excludeMethods"> input,back,cancel,browse</param>
+			</interceptor-ref>
+ 
+            <result name="success">/attendenceUploadSuccess.jsp</result>
+            <result name="error">/attendenceUploadError.jsp</result>
+        </action>
+    
+    	<!-- Employee Registration action -->
+   		<action name="register" class="com.hrms.action.RegisterAction" method="insertDetails">
+    		<result name="input">empRegister.jsp</result>
+    		<result name="success">message.jsp</result>
+    		<result name="error">registrationError.jsp</result>
+    	</action>
+    
+   
+   	 	<!-- Employee Leave view Action-->
+   	 	<action name="leaveViewAction" class="com.hrms.action.EmpLeaveViewAction" method="employeeLeaveInfo">
+    		<result name="success">empLeaveDetailsHome.jsp</result>
+    		<result name="error">commonErrorPage.jsp</result>
+   	 	</action>
+   	 	
+   	 	<!-- view leave apply history view Action-->
+   	 	<action name="leaveHistoryViewAction" class="com.hrms.action.EmpLeaveViewAction" method="leaveDetailsInfo">
+    		<result name="success">empLeaveApplyDetails.jsp</result>
+    		<result name="error">error.jsp</result>
+   	 	</action>
+   	 	
+   	 	
+    	<action name="empAttendenceUpdate" class="com.hrms.action.EmpAttendenceMaintenanceAction" method="employeeAttendenceRetrieve">
+    		<result name="success" >empAttendenceHome.jsp</result>
+    		<result name="error">error.jsp</result>
+    	</action>
+    	
+    	<action name="empAttendenceCheck" class="com.hrms.action.EmpAttendenceMaintenanceAction" method="attendenceCheck">
+    		<result name="success" >empAttendenceHome.jsp</result>
+    		<result name="error">commonErrorPage.jsp</result>
+    	</action>
+    	
+    	
+    <!-- Employee Documents Upload Action -->
+	<action name="uploadFile" class="com.hrms.action.EmpDocUploadAction"> 
+ 
+            <interceptor-ref name="exception" />
+			<interceptor-ref name="alias" />
+			<interceptor-ref name="servletConfig" />
+			<interceptor-ref name="prepare" />
+			<interceptor-ref name="i18n" />
+			<interceptor-ref name="chain" />
+			<interceptor-ref name="debugging" />
+			<interceptor-ref name="profiling" />
+			<interceptor-ref name="scopedModelDriven" />
+			<interceptor-ref name="modelDriven" />
+			<interceptor-ref name="fileUpload">
+			<param name="maximumSize">2097152</param>  
+  			<param name="allowedTypes">application/pdf</param>
+			</interceptor-ref>
+			<interceptor-ref name="checkbox" />
+			<interceptor-ref name="staticParams" />
+			<interceptor-ref name="actionMappingParams" />
+			<interceptor-ref name="params">
+			<param name="excludeParams"> dojo\..*,^struts\..*</param>
+			</interceptor-ref>
+			<interceptor-ref name="conversionError" />
+			<interceptor-ref name="validation">
+			<param name="excludeMethods"> input,back,cancel,browse</param>
+			</interceptor-ref>
+			<interceptor-ref name="workflow">
+			<param name="excludeMethods"> input,back,cancel,browse</param>
+			</interceptor-ref>
+ 
+            <result name="success">/DocumentUploadSuccess.jsp</result>
+            <result name="error">/DocumentUploadError.jsp</result>
+        </action>
+ 		<action name="download" class="com.hrms.action.EmployeeDocumentDownloadAction">
+			<result name="success" type="stream">
+			  <param name="contentType">application/octet-stream</param>
+			  <param name="inputName">fileInputStream</param>
+			  <param name="contentDisposition">attachment;filename="Salary Slip"</param>
+			  <param name="bufferSize">1024</param>
+			</result>
+			<result name="error">ErrorPage.jsp</result>
+   </action>
+   
+   <!-- Employee view of HR Policy Action-->
+   <action name="empHRPolicies" class="com.hrms.action.EmpHRPolicyAction">
+			<result name="success">success.jsp</result>
+    		<result name="error">ErrorPage.jsp</result>
+   </action>
+   
+   <!-- HR Policy upload Action -->
+   <action name="uploadHRPolicies" class="com.hrms.action.HRPolicyAction">
+			<result name="success">success.jsp</result>
+    		<result name="error">ErrorPage.jsp</result>
+   </action>
+   
+   <!-- Employee TimeSheet Submit Action -->
+   <action name="timeSheetSubmit" class="com.hrms.action.EmployeeTimeSheetSubmitAction" method="submitTimeSheet">
+			<result name="success">success.jsp</result>
+    		<result name="error">ErrorPage.jsp</result>
+   </action>
+   
+   
+   <action name="taskApproval" class="com.hrms.action.EmployeeTaskApprovalAction">
+			<result name="success">EmployeeTaskApproval.jsp</result>
+    		<result name="error">ErrorPage.jsp</result>
+   </action>
+   
+   <!-- Employee TimeSheet Approved Action -->
+   <action name="approved" class="com.hrms.action.EmployeeTimeSheetSubmitAction" method="getStatus">
+			<result name="success">EmployeeTaskApproval.jsp</result>
+    		<result name="error">ErrorPage.jsp</result>
+   </action>
+   
+   <!-- Action to view employee Timesheet -->
+   <action name="empViewTimeSheet" class="com.hrms.action.EmployeeTimeSheetSubmitAction" method="viewTimeSheet">
+			<result name="success">EmpTimeSheet.jsp</result>
+    		<result name="error">ErrorPage.jsp</result>
+   </action>
+   
+   <!-- Action to view Employee List -->
+   	<action name="employeeList" class="com.hrms.action.EmployeeListDetailsAction">
+    		<result name="success">employeeListInfo.jsp</result>
+    		<result name="error">commonErrorPage.jsp</result>
+   	</action>
+   	
+   	<!-- Action for upload Project Details -->
+   	<action name="uploadProjects" class="com.hrms.action.ProjectUploadAction">
+    		<result name="success">success.jsp</result>
+    		<result name="error">commonErrorPage.jsp</result>
+   	</action>
+   	
+   	<!-- Action for employee Family Details -->
+   	<action name="familyInfo" class="com.hrms.action.EmployeeProfileView" method="empFamilyDetails">
+    		<result name="success">FamilyDetails.jsp</result>
+    		<result name="error">commonErrorPage.jsp</result>
+   	</action>
+   	
+   	<!-- Action for employee Professional Details -->
+   	<action name="professionalInfo" class="com.hrms.action.EmployeeProfileView" method="empProfessionalInfo">
+    		<result name="success">ProfessionalDetails.jsp</result>
+    		<result name="error">commonErrorPage.jsp</result>
+   	</action>
+   	
+   	 <!-- Employee Basic Profile details view action -->
+    	<action name="employeeDetails" class="com.hrms.action.EmployeeProfileView" method="empBasicDetails">
+    		<result name="success">employeeProfileView.jsp</result>
+    		<result name="error">commonErrorPage.jsp</result>
+   	 	</action>
+   	 	
+   	 	<!-- Employee Education details view action -->
+    	<action name="employeeEducationDetails" class="com.hrms.action.EmployeeProfileView" method="empEducationDetails">
+    		<result name="success">EducationDetails.jsp</result>
+    		<result name="error">commonErrorPage.jsp</result>
+   	 	</action>
+   	 	
+   	 	<!-- Employee Present details view action -->
+    	<action name="employeePresentList" class="com.hrms.dao.AttendenceAndLeaveCheckDao" method="empPresentAttendenceDetails">
+    		<result name="success">EmpPresentList.jsp</result>
+    		<result name="error">commonErrorPage.jsp</result>
+   	 	</action>
+   	 	
+   	 	<!-- Employee Absent details view action -->
+    	<action name="employeeAbsentList" class="com.hrms.dao.AttendenceAndLeaveCheckDao" method="empAbsentAttendenceDetails">
+    		<result name="success">EmpAbsentList.jsp</result>
+    		<result name="error">commonErrorPage.jsp</result>
+   	 	</action>
+   	 	
+   	 	<!-- All Employee Attendance details view action -->
+    	<action name="allEmployeeAttendanceList" class="com.hrms.dao.AttendenceAndLeaveCheckDao" method="allEmpAttendence">
+    		<result name="success">allEmpAttendenceDetails.jsp</result>
+    		<result name="error">commonErrorPage.jsp</result>
+   	 	</action>
+   	 	
+   	 	<!--All Employee Leave details view action -->
+    	<action name="allEmployeeLeaveDetails" class="com.hrms.action.EmpLeaveViewAction" method="allEmpLeaveDetails">
+    		<result name="success">allEmpLeaveDetails.jsp</result>
+    		<result name="error">commonErrorPage.jsp</result>
+   	 	</action>
+   	 	
+   	 	<!--All News And Blogs Upload action -->
+    	<action name="newsUpload" class="com.hrms.action.NewsAndBlogsAction" method="newsAndBlogsUpdate">
+    		<result name="success">success.jsp</result>
+    		<!-- <result name="error">commonErrorPage.jsp</result> -->
+   	 	</action>
+   	 	
+   	 	<!--All News And Blogs View action -->
+    	<action name="newsView" class="com.hrms.action.NewsAndBlogsAction" method="newsAndBlogsView">
+    		<result name="success">NewsAndBlogsView.jsp</result>
+    		<!-- <result name="error">commonErrorPage.jsp</result> -->
+   	 	</action>
+   	 	
+   	 	<!--All News And Blogs View action -->
+    	<action name="allNewsView" class="com.hrms.action.NewsAndBlogsAction" method="newsAndBlogsView">
+    		<result name="success">NewsAndBlogsViewAll.jsp</result>
+    		<!-- <result name="error">commonErrorPage.jsp</result> -->
+   	 	</action>
+   	 	
+   	 	<!--Emp Basic Profile Details Update action -->
+    	<action name="empDetailsUpdate" class="com.hrms.action.EmpProfileUpdateAction" method="empBasicDetailsUpdate">
+    		<result name="success" type="chain">employeeDetails</result>
+    		<!-- <result name="success">NewsAndBlogsView.jsp</result> -->
+    		<result name="error">commonErrorPage.jsp</result>
+   	 	</action>
+   	 	
+   	 	<!--Emp Professional Details Update action -->
+    	<action name="empProfDetailsUpdate" class="com.hrms.action.EmpProfileUpdateAction" method="empProfDetailsUpdate">
+    		<result name="success" type="chain">professionalInfo</result>
+    		<!-- <result name="success">NewsAndBlogsView.jsp</result> -->
+    		<result name="error">commonErrorPage.jsp</result>
+   	 	</action>
+   	 	
+   	 	<!--Emp Family Details Update action -->
+    	<action name="empFamilyUpdate" class="com.hrms.action.EmpProfileUpdateAction" method="empFamilyDetailsUpdate">
+    		<result name="success" type="chain">familyInfo</result>
+    		<!-- <result name="success">NewsAndBlogsView.jsp</result> -->
+    		<result name="error">commonErrorPage.jsp</result>
+   	 	</action>
+   	 	
+   	 	<!--Emp Education Details Update action -->
+    	<action name="empEduUpdate" class="com.hrms.action.EmpProfileUpdateAction" method="empEduDetailsUpdate">
+    		<result name="success" type="chain">employeeEducationDetails</result>
+    		<!-- <result name="success">NewsAndBlogsView.jsp</result> -->
+    		<result name="error">commonErrorPage.jsp</result>
+   	 	</action>
+   	 	
+   	 	<!--Emp Password Reset action -->
+    	<action name="resetPwd" class="com.hrms.action.EmpProfileUpdateAction" method="resetPassword">
+    		<!--<result name="success" type="chain">employeeEducationDetails</result>-->
+    		 <result name="success">success.jsp</result> 
+    		<result name="error">commonErrorPage.jsp</result>
+   	 	</action>
+   	 	
+   	 	<!--All Emp Timesheet Details action -->
+    	<action name="allEmpTimesheetInfo" class="com.hrms.action.AllEmpTimesheetAction" method="allEmpTimeSheet">
+    		<result name="success">allEmpTimesheetDetails.jsp</result>
+    		<result name="error">commonErrorPage.jsp</result>
+   	 	</action>
+   	 	
+   	 	<!-- <action name="userImage" class="com.hrms.action.EventsUploadAction" method="imageUpload">
+   	 		<result name="success">/attendenceUploadSuccess.jsp</result>
+            <result name="error">/attendenceUploadError.jsp</result>
+   	 	</action> -->
+   	 	<action name="userImage" class="com.hrms.action.EventsUploadAction" method="eventsUpload"> 
+ 
+            <interceptor-ref name="exception" />
+			<interceptor-ref name="alias" />
+			<interceptor-ref name="servletConfig" />
+			<interceptor-ref name="prepare" />
+			<interceptor-ref name="i18n" />
+			<interceptor-ref name="chain" />
+			<interceptor-ref name="debugging" />
+			<interceptor-ref name="profiling" />
+			<interceptor-ref name="scopedModelDriven" />
+			<interceptor-ref name="modelDriven" />
+			<interceptor-ref name="fileUpload">
+			<param name="maximumSize">2097152</param>  
+  			<param name="allowedTypes">image/png,image/gif,image/jpeg,image/pjpeg</param>
+			</interceptor-ref>
+			<interceptor-ref name="checkbox" />
+			<interceptor-ref name="staticParams" />
+			<interceptor-ref name="actionMappingParams" />
+			<interceptor-ref name="params">
+			<param name="excludeParams"> dojo\..*,^struts\..*</param>
+			</interceptor-ref>
+			<interceptor-ref name="conversionError" />
+			<interceptor-ref name="validation">
+			<param name="excludeMethods"> input,back,cancel,browse</param>
+			</interceptor-ref>
+			<interceptor-ref name="workflow">
+			<param name="excludeMethods"> input,back,cancel,browse</param>
+			</interceptor-ref>
+ 
+            <result name="success">/DocumentUploadSuccess.jsp</result>
+            <result name="error">/DocumentUploadError.jsp</result>
+        </action>
+   	 	
+   	 	<action name="imageUploadAction" class="com.hrms.action.EventsUploadAction" method="imageUpload"> 
+ 
+            <interceptor-ref name="exception" />
+			<interceptor-ref name="alias" />
+			<interceptor-ref name="servletConfig" />
+			<interceptor-ref name="prepare" />
+			<interceptor-ref name="i18n" />
+			<interceptor-ref name="chain" />
+			<interceptor-ref name="debugging" />
+			<interceptor-ref name="profiling" />
+			<interceptor-ref name="scopedModelDriven" />
+			<interceptor-ref name="modelDriven" />
+			<interceptor-ref name="fileUpload">
+			<param name="maximumSize">2097152</param>  
+  			<param name="allowedTypes">image/png,image/gif,image/jpeg,image/pjpeg</param>
+			</interceptor-ref>
+			<interceptor-ref name="checkbox" />
+			<interceptor-ref name="staticParams" />
+			<interceptor-ref name="actionMappingParams" />
+			<interceptor-ref name="params">
+			<param name="excludeParams"> dojo\..*,^struts\..*</param>
+			</interceptor-ref>
+			<interceptor-ref name="conversionError" />
+			<interceptor-ref name="validation">
+			<param name="excludeMethods"> input,back,cancel,browse</param>
+			</interceptor-ref>
+			<interceptor-ref name="workflow">
+			<param name="excludeMethods"> input,back,cancel,browse</param>
+			</interceptor-ref>
+ 
+            <result name="success">/DocumentUploadSuccess.jsp</result>
+            <result name="error">/DocumentUploadError.jsp</result>
+        </action>
+   	 	
+   		<action name="viewEventImage" class="com.hrms.action.EventsUploadAction" method="imageRetrieve"> 
+   				<result name="success">/EmployeeEventsView.jsp</result>
+            	<result name="error">/DocumentUploadError.jsp</result>
+   		</action>
+    <!--  <action name="empAttendenceView" class="com.hrms.model.EmpAttendenceFileUploadBean">
+	    <result name="none">adminAttendenceMaintenanceHome.jsp</result>
+		</action> -->
+    
+    <!-- Employee login action with Session Trecking -->
+    <!-- <action name="login1" class="com.hrms.action.EmployeeLoginAction">
+    <result name="success">welcome.jsp</result>
+    <result name="error">error.jsp</result>
+    </action> -->
+ 
+</package>
+ 
+</struts>

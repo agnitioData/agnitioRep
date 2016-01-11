@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>aBIT - Login</title>
+</head>
+<!-- Latest compiled and minified CSS -->
+<link rel="shortcut icon" href="img/favicon.ico">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="css/style.css">
+
+
+
+<body>
+
+<section id="header" >
+
+<div class="logo"> <img src="img/logo.png" alt=""/></div>
+<nav> <ul>
+<li> <a href="#">Help</a></li>
+<li><a href="#">About ABIT </a></li>
+<li> <a href="#">Support </a></li>
+</ul> </nav>
+</section> 
+<div class="clearfix" style="  width:100%; clear:both;"></div>
+<div class="container"><div class="row"><div class="col-lg-8 col-md-6 col-sm-12 col-xs-12">  <div class="welcome-text"><h1> Welcome to 
+<span>ABIT</span> </h1>  </div></div> <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+
+
+<div class="loginbox-outer">    
+
+<div class="loginbox">
+    <form>
+
+        <div class="row">
+
+            <div class="col-xs-12 margin-bottom">
+
+              <div class="input-group">
+
+                <span class="input-group-addon bgcolor">
+
+                 <span class="glyphicon glyphicon-user"></span>
+
+                </span>
+
+                <input type="text" id="uid" placeholder="Username" class="form-control"  required autofocus>
+                
+              
+
+              </div>
+  <div class="message-error" id="uid-err"> Username is required.</div>
+            </div>
+
+            <div class="col-xs-12 margin-bottom ">
+
+              <div class="input-group ">
+
+                <span class="input-group-addon bgcolor">
+
+                    <span class="glyphicon glyphicon-lock"></span>
+
+                </span>
+
+                <input type="password" name="password" placeholder="Password" id="pass"  class="form-control" required autofocus>
+
+              </div>
+<div class="message-error" id="pass-err">Pasword is required.</div>
+            </div>
+
+          </div>
+              <div class="form-group ">
+
+        <div class=" col-xs-12  margin-bottom">
+
+            <div class="checkbox">
+
+                <label><input id="chkBtn" style="background-color: transparent;" type="checkbox"> Remember me</label>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="form-group">
+
+        <div class=" col-xs-12" style="text-align:center;">
+
+            <button type="button" id="loginBtn" class="btn btn-default btn-submit">Login</button>
+
+        </div>
+
+    </div>
+
+    </form>
+</div>
+
+      
+      
+      </div></div></div></div>
+      
+      <footer>
+      <div>
+      <span class="text">Designed &amp; Developed by:</span>
+      <span><img src="img/agnito-logo.png" alt="Agnito"/></span>  </div>
+      <p>Copyright © 2014 Agnitio Technologies. All Rights Reserved.</p></footer>
+
+
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery.bacdkstretch.js"></script>
+	<script src="js/EventBinder.js"></script>
+	<script src="js/DataService.js"></script>
+	<script>
+	    $.backstretch(["img/Background.jpg"]);
+        EventManager.init();
+  </script>
+  
+  
+</body>
+</html>
