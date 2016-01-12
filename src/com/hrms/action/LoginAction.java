@@ -15,10 +15,7 @@ import com.hrms.util.HibernateUtils;
 import com.opensymphony.xwork2.ActionSupport;
  
 public class LoginAction {
-     
-	
-	
-	
+
 	private EmployeeLoginDetailsBean user = new EmployeeLoginDetailsBean();
     
 	public String loginDetails(String name, String pwd){
