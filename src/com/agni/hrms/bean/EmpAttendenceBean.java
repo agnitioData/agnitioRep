@@ -7,7 +7,7 @@ public class EmpAttendenceBean {
 	private String outTime;
 	private String duration;
 	private String status;
-	
+	 
 	public String getInTime() {
 		return inTime;
 	}
