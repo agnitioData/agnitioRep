@@ -52,15 +52,22 @@ public class JavaSparkSQL {
   }
 
   public static void main(String[] args) throws Exception {
-    SparkConf sparkConf = new SparkConf().setMaster("local2").setAppName("JavaSparkSQL");
+	  
+	  
+	System.setProperty("javax.xml.parsers.DocumentBuilderFactory",
+			  "com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl");
+    System.setProperty("hadoop.home.dir", "C://Program Files (x86)//Hadoop//hadoop-common-2.2.0-bin-master");
+	
+    
+    
+    SparkConf sparkConf = new SparkConf().setMaster("local").setAppName("JavaSparkSQL");
     JavaSparkContext ctx = new JavaSparkContext(sparkConf);
     SQLContext sqlContext = new SQLContext(ctx);
 
-    System.setProperty("hadoop.home.dir", "C://Program Files (x86)//Hadoop//hadoop-common-2.2.0-bin-master");
     
     System.out.println("=== Data source: RDD ===");
     // Load a text file and convert each line to a Java Bean.
-    JavaRDD<Person> people = ctx.textFile("people.txt").map(
+    JavaRDD<Person> people = ctx.textFile("./resources/people.txt").map(
       new Function<String, Person>() {
         @Override
         public Person call(String line) {
@@ -119,7 +126,7 @@ public class JavaSparkSQL {
     System.out.println("=== Data source: JSON Dataset ===");
     // A JSON dataset is pointed by path.
     // The path can be either a single text file or a directory storing text files.
-    String path = "./src/main/resources/people.json";
+    String path = "./resources/people.json";
     // Create a DataFrame from the file(s) pointed by path
     DataFrame peopleFromJsonFile = sqlContext.read().json(path);
 
